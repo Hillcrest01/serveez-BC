@@ -1,0 +1,17 @@
+{
+  "id": "3f0c2fee-5db8-45c4-b56b-4f182bdf3b70",
+  "name": "serveez",
+  "publisher": "Petra",
+  "version": "1.0.9.53",
+  "application": "25.0.0.0",
+  "runtime": "13.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "features": [
+    "NoImplicitWith"
+  ]
+}
