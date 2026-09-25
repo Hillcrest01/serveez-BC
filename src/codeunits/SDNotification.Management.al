@@ -303,7 +303,7 @@ codeunit 50107 "SD Notification Management"
             GetCustomerNo(OrderNo),
             OrderNo,
             NotificationType,
-            'Support Request Created',
+            'Support Request Created Successfully',
             'Your support request ' + SupportNo + ' has been created.');
     end;
 
