@@ -12,7 +12,7 @@ page 50126 "SD Delivery Card"
         {
             group(General)
             {
-                Caption = 'Delivery';
+                Caption = 'Delivery Card';
 
                 field("Delivery No."; Rec."Delivery No.")
                 {
