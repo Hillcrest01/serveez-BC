@@ -1,6 +1,6 @@
 page 50127 "SD Delivery List"
 {
-    Caption = 'Deliveries';
+    Caption = 'Deliveries List';
     PageType = List;
     SourceTable = "SD Delivery";
     ApplicationArea = All;
