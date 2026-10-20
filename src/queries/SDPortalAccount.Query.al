@@ -33,6 +33,10 @@ query 50107 "SD Portal Account Query"
             column(EmailVerified; "Email Verified")
             {
             }
+            column(Email_Verification_Token; "Email Verification Token")
+            {
+
+            }
 
             column(LastLogin; "Last Login")
             {

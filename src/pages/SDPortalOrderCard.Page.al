@@ -54,6 +54,10 @@ page 50119 "SD Portal Order Card"
                 {
                     ApplicationArea = All;
                 }
+                field("Paystack Reference"; Rec."Paystack Reference")
+                {
+                    ApplicationArea = All;
+                }
             }
 
             part(Lines; "SD Portal Order Subpage")

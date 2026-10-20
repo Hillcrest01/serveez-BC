@@ -73,6 +73,10 @@ query 50108 "SD Portal Order Query"
             column(CustomerNotes; "Customer Notes")
             {
             }
+            column(Paystack_Reference; "Paystack Reference")
+            {
+
+            }
         }
     }
 }

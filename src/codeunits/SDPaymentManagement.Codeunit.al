@@ -64,8 +64,10 @@ codeunit 50105 "SD Payment Management"
             PortalOrder,
             Amount);
         Payment.Insert(true);
-
+        MarkPaymentSuccessful(PaymentNo);
         RecalculateOrderPayment(OrderNo);
+
+
 
         exit(PaymentNo);
     end;
@@ -128,6 +130,8 @@ codeunit 50105 "SD Payment Management"
         Payment.Modify(true);
 
         RecalculateOrderPayment(Payment."Order No.");
+
+
     end;
 
     local procedure GetPayment(
@@ -325,8 +329,7 @@ codeunit 50105 "SD Payment Management"
                                 Service."Deposit Percentage" /
                                 100;
 
-                            RequiredAmount +=
-                                LineDeposit;
+                            RequiredAmount += LineDeposit;
                         end;
 
                     OrderLine."Line Type"::Product:

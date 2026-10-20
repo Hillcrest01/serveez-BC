@@ -52,34 +52,174 @@ page 50105 "Serveez Role Center"
                     ApplicationArea = All;
                     RunObject = page "SD Product List";
                 }
-                group("Order Management")
+
+            }
+
+            group("Order Management")
+            {
+                action("All Orders")
                 {
-                    action("Portal Order List")
-                    {
-                        ApplicationArea = All;
-                        RunObject = page "SD Portal Order List";
-                    }
-                    action("Order Placement Test")
-                    {
-                        ApplicationArea = All;
-                        RunObject = page "SD Test Console";
-                    }
-                    action("Order Fulfillment List")
-                    {
-                        ApplicationArea = All;
-                        RunObject = page "SD Order Fulfillment List";
-                    }
-                    action("Delivery List")
-                    {
-                        ApplicationArea = All;
-                        RunObject = page "SD Delivery List";
-                    }
-                    action("Delivery Persons")
-                    {
-                        ApplicationArea = All;
-                        RunObject = page "SD Delivery Person List";
-                    }
+                    ApplicationArea = All;
+                    RunObject = page "SD Portal Order List";
                 }
+                action("Submitted Orders")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Portal Order List";
+                    RunPageView = where("Order Status" = filter(Submitted));
+                }
+                action("Orders in Progress")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Portal Order List";
+                    RunPageView = where("Order Status" = filter("InProgress"));
+                }
+                action("Completed Orders")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Portal Order List";
+                    RunPageView = where("Order Status" = filter("Completed"));
+                }
+                action("Closed Orders")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Portal Order List";
+                    RunPageView = where("Order Status" = filter("Closed"));
+                }
+                action("Rejected Orders")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Portal Order List";
+                    RunPageView = where("Order Status" = filter("Rejected"));
+                }
+                action("Cancelled Orders")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Portal Order List";
+                    RunPageView = where("Order Status" = filter("Cancelled"));
+                }
+                action("Delivery Persons")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Delivery Person List";
+                }
+
+            }
+
+            group(fulfillment)
+            {
+                action("All")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Order Fulfillment List";
+                }
+                action("Not Started")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Order Fulfillment List";
+                    RunPageView = where(Status = filter("NotStarted"));
+                }
+                action("Assigned")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Order Fulfillment List";
+                    RunPageView = where(Status = filter("Assigned"));
+                }
+                action("Accepted")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Order Fulfillment List";
+                    RunPageView = where(Status = filter("Accepted"));
+                }
+                action("In Progress")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Order Fulfillment List";
+                    RunPageView = where(Status = filter("InProgress"));
+                }
+                action("Ready")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Order Fulfillment List";
+                    RunPageView = where(Status = filter(Ready));
+                }
+                action("Out for Delivery")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Order Fulfillment List";
+                    RunPageView = where(Status = filter("OutForDelivery"));
+                }
+                action("Delivered")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Order Fulfillment List";
+                    RunPageView = where(Status = filter(Delivered));
+                }
+                action("Completed")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Order Fulfillment List";
+                    RunPageView = where(Status = filter(Completed));
+                }
+                action("Cancelled")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Order Fulfillment List";
+                    RunPageView = where(Status = filter("Cancelled"));
+                }
+
+            }
+            group(delivery)
+            {
+                action("Delivery List")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Delivery List";
+                }
+                action("Created")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Delivery List";
+                    RunPageView = where(Status = filter(Created));
+                }
+                action("Del. Assigned")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Delivery List";
+                    RunPageView = where(Status = filter(Assigned));
+                }
+                action("En Route to Destination")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Delivery List";
+                    RunPageView = where(Status = filter(EnRouteToDestination));
+                }
+                action("Del. Delivered")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Delivery List";
+                    RunPageView = where(Status = filter(Delivered));
+                }
+                action("Del. Completed")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Delivery List";
+                    RunPageView = where(Status = filter(Completed));
+                }
+                action("Declined")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Delivery List";
+                    RunPageView = where(Status = filter(Declined));
+                }
+                action("Failed")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "SD Delivery List";
+                    RunPageView = where(Status = filter(Failed));
+                }
+
+
             }
             group("Portal Users")
             {

@@ -324,7 +324,7 @@ codeunit 50131 "SD Order Management"
         else
             NextNumber := 1;
 
-        exit('ORD-' + Format(NextNumber, 6, '<Integer,6><Filler Character,0>'));
+        exit('RD-' + Format(NextNumber, 6, '<Integer,6><Filler Character,0>'));
     end;
 
     local procedure GetNextLineNo(OrderNo: Code[20]): Integer
@@ -449,5 +449,20 @@ codeunit 50131 "SD Order Management"
         PortalOrder."Modified At" := CurrentDateTime();
 
         PortalOrder.Modify(true);
+    end;
+
+    procedure insertPaystackReference(OrderNo: Code[20]; paystackRef: Text[100]) return_value: Boolean
+    var
+        Order: Record "SD Portal Order";
+
+    begin
+        return_value := false;
+        Order.Reset();
+        Order.SetRange("Order No.", OrderNo);
+        if not Order.FindFirst() then
+            Error('The order could not be found');
+        Order."Paystack Reference" := paystackRef;
+        Order.Modify(true);
+        return_value := true;
     end;
 }

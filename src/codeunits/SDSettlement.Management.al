@@ -8,7 +8,7 @@ codeunit 50116 "SD Settlement Management"
         Fulfillment: Record "SD Order Fulfillment";
         OrderLine: Record "SD Portal Order Line";
         Delivery: Record "SD Delivery";
-        Provider: Record "SD Service Provider";
+        Provider: Record Vendor;
         DeliveryPerson: Record "SD Delivery Person";
         Settlement: Record "SD Settlement";
         SettlementNo: Code[20];
@@ -81,23 +81,23 @@ codeunit 50116 "SD Settlement Management"
                     'Provider %1 does not exist.',
                     Fulfillment."Provider No.");
 
-            if not Provider.Active then
-                Error(
-                    'Provider %1 is not active.',
-                    Fulfillment."Provider No.");
+            // if not Provider.Active then
+            //     Error(
+            //         'Provider %1 is not active.',
+            //         Fulfillment."Provider No.");
 
-            if Provider."Provider Percentage" < 0 then
-                Error(
-                    'Provider percentage cannot be negative.');
+            // if Provider."Provider Percentage" < 0 then
+            //     Error(
+            //         'Provider percentage cannot be negative.');
 
-            if Provider."Provider Percentage" > 100 then
-                Error(
-                    'Provider percentage cannot exceed 100.');
+            // if Provider."Provider Percentage" > 100 then
+            //     Error(
+            //         'Provider percentage cannot exceed 100.');
 
-            ProviderAmount :=
-                ServiceAmount *
-                Provider."Provider Percentage" /
-                100;
+            // ProviderAmount :=
+            //     ServiceAmount *
+            //     Provider."Provider Percentage" /
+            //     100;
         end;
 
         DeliveryPersonAmount := 0;

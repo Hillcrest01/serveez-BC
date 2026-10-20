@@ -73,4 +73,24 @@ table 50121 "SD Service Provider"
         {
         }
     }
+
+    trigger OnInsert()
+    var
+        ServiceProvider: Record "SD Service Provider";
+        ExistingNo: Code[20];
+        LastNo: Integer;
+    begin
+        if "Provider No." <> '' then
+            exit;
+        LastNo := 0;
+
+        if ServiceProvider.FindLast() then begin
+            ExistingNo := ServiceProvider."Provider No.";
+            if CopyStr(ExistingNo, 1, 2) = 'SP' then
+                Evaluate(LastNo, CopyStr(ExistingNo, 3));
+        end;
+        LastNo += 1;
+
+        "Provider No." := 'SP' + Format(LastNo, 0, '<Integer,5><Filler Character,0>')
+    end;
 }

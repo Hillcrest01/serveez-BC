@@ -119,6 +119,11 @@ table 50109 "SD Portal Order"
             Caption = 'Customer Notes';
             DataClassification = CustomerContent;
         }
+        field(18; "Paystack Reference"; Text[150])
+        {
+            Caption = 'Paystack Reference';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

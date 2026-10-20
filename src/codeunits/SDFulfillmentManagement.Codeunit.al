@@ -79,7 +79,7 @@ codeunit 50101 "SD Fulfillment Management"
     ProviderNo: Code[20])
     var
         Fulfillment: Record "SD Order Fulfillment";
-        Provider: Record "SD Service Provider";
+        Provider: Record Vendor;
         ProviderService: Record "SD Provider Service";
     begin
         GetFulfillment(
@@ -98,25 +98,25 @@ codeunit 50101 "SD Fulfillment Management"
                         'Provider %1 does not exist.',
                         ProviderNo);
 
-                if not Provider.Active then
-                    Error(
-                        'Provider %1 is not active.',
-                        ProviderNo);
+                // if not Provider.Active then
+                //     Error(
+                //         'Provider %1 is not active.',
+                //         ProviderNo);
 
-                if not ProviderService.Get(
-                    ProviderNo,
-                    Fulfillment."Service Code")
-                then
-                    Error(
-                        'Provider %1 is not configured for service %2.',
-                        ProviderNo,
-                        Fulfillment."Service Code");
+                // if not ProviderService.Get(
+                //     ProviderNo,
+                //     Fulfillment."Service Code")
+                // then
+                //     Error(
+                //         'Provider %1 is not configured for service %2.',
+                //         ProviderNo,
+                //         Fulfillment."Service Code");
 
-                if not ProviderService.Active then
-                    Error(
-                        'Provider %1 is inactive for service %2.',
-                        ProviderNo,
-                        Fulfillment."Service Code");
+                // if not ProviderService.Active then
+                //     Error(
+                //         'Provider %1 is inactive for service %2.',
+                //         ProviderNo,
+                //         Fulfillment."Service Code");
             end;
         end
         else
@@ -126,10 +126,10 @@ codeunit 50101 "SD Fulfillment Management"
                         'Provider %1 does not exist.',
                         ProviderNo);
 
-                if not Provider.Active then
-                    Error(
-                        'Provider %1 is not active.',
-                        ProviderNo);
+                // if not Provider.Active then
+                //     Error(
+                //         'Provider %1 is not active.',
+                //         ProviderNo);
             end;
 
         Fulfillment."Assigned To" := AssignedTo;
